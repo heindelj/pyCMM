@@ -214,3 +214,4 @@ def test_cmm(water_data):
     xpol = torch.sum(xpol_pairwise) / 2 * HARTREE2KCAL
     xpol_ref = torch.tensor([-0.2740179677225849])
     assert torch.allclose(xpol, xpol_ref)
+
