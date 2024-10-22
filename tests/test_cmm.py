@@ -138,7 +138,7 @@ def water_data(coords: torch.Tensor):
         param_ct,
     )
 
-def test_cmm():
+def test_nonbonded_interactions():
     torch.set_default_dtype(torch.float64)
 
     coords = get_water_dimer_coords(requires_grad=False)
@@ -162,7 +162,6 @@ def test_cmm():
     )
     ct_direct = torch.sum(ct_direct_pairwise) / 2 * HARTREE2KCAL
     dq = scatter(dq_pairwise, pairs[1])
-
     dq_groups = scatter(dq, torch.tensor([0, 0, 0, 1, 1, 1]))
 
     ct_direct_ref = torch.tensor([-1.9459432858421248])
