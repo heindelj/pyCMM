@@ -1,3 +1,5 @@
+# NOTE(JOE): Can also imagine defining an AtomClass object which just populates
+# to the AtomTypes so that AtomTypes can be shared between atoms in the same AtomClass.
 
 class AtomTypes:
     """
