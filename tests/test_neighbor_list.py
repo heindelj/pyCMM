@@ -2,7 +2,6 @@ import torch
 import pytest
 import numpy as np
 from cmm.neighbor_list import CellList, NSquaredList, NeighborList
-from cmm.misc_utils import write_xyz
 
 def generate_random_system(n_particles, density, seed=None):
     """
@@ -19,7 +18,6 @@ def generate_random_system(n_particles, density, seed=None):
     """
     if seed is not None:
         torch.manual_seed(seed)
-    
     
     volume = n_particles / density
     box_size = volume ** (1/3)
