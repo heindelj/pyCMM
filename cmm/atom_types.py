@@ -10,8 +10,9 @@ class AtomTypes:
     which can be used to associate particular atoms in a system with the appropriate
     parameters and other data. This integer is referred to as the id.
     
-    All this class provides are utilities to convert between the string representation
-    and the atom type index. Force fields are responsible for implementing anything that
+    This class provides utilities to convert between the string representation
+    and the atom type index and to specify new atom types.
+    Force fields are responsible for implementing anything that
     needs to be done with the atom types as well as defining new atom types as needed.
     """
     def __init__(self):

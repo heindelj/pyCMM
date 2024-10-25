@@ -1,6 +1,22 @@
 import torch
 from abc import ABC, abstractmethod
 
+"""
+This file defines the interface and concrete types of NeighborList.
+Any NeighborList should define three methods.
+    _build: Build the neighbor list from scratch given positions and a box.
+    update: Update the neighbor list without a full rebuild if possible. Otherwise call _build.
+    get_neighbors: Return a torch.Tensor of integers specifying all neighbors with the cutoff
+    for a particular atom index.
+
+Features that are not currently supported but should be in the future:
+1) Non-orthorhombic boxes
+2) Half neighbor lists. That is, ones where only unique pairs are stored (i<j).
+3) Filtering of neighbors using a masked list. Usually this will mean filtering
+out neighbors within a certain a number of bonds which will be much easier to
+implement once the topology object is sorted out.
+"""
+
 class NeighborList(ABC):
 
     @abstractmethod
